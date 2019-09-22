@@ -10,4 +10,5 @@ print(txt.read())
 txt_again = input("Type the filename again: ")
 file_again = open(txt_again)
 print(file_again.read())
-
+txt.close()
+file_again.close()
