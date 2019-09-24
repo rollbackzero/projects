@@ -13,10 +13,10 @@ def print_one(arg1):
 def print_none():
     print("I got nothin'.")
 
-arg1 = input(f"Firstname? ")
-arg2 = input(f"Lastname? ")
+var1 = input(f"Firstname? ")
+var2 = input(f"Lastname? ")
 
-print_two(arg1,arg2)
-print_two_again(arg1,arg2)
-print_one(arg1)
+print_two(var1,var2)
+print_two_again(var1,var2)
+print_one(var1)
 print_none()
