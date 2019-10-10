@@ -4,7 +4,7 @@ def gold_room():
     print('This room is full of gold. How much do you take?')
 
     choice = input('> ')
-    if '0' in choice or '1' in choice:
+    if choice != '' and choice != '0':
         how_much = int(choice)
     else:
         dead('Man, learn to type a number')
@@ -70,10 +70,3 @@ def start():
         dead('You stumble around the room until you starve')
 
 start()
-
-
-
-
-
-
-
