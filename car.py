@@ -4,6 +4,7 @@ class Car(object):
         self.model = model
         self.color = color
         self.max_speed = max_speed
+        print(self.make, self.model, self.color, self.max_speed)
 
     def start(self):
         print("start engine")
@@ -18,6 +19,5 @@ class Car(object):
         print("breaking")
 
 
-Volvo = Car('Volvo', 'S40', 'Silver', 200)
-Nissan = Car("Nissan", "Xtrail", "Red", 180)
+Volvo = Car("Volvo", "S40", "Silver", 200)
 
