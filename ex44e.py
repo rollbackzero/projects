@@ -15,7 +15,10 @@ class Child(object):
         self.other = Other()
 
     def implicit(self):
-        print("CHILD implicit()")
+       self.other.implicit()
+
+    def override(self):
+        print("CHILD override()")
 
     def altered(self):
         print("CHILD, BEFORE OTHER altered()")
@@ -30,8 +33,8 @@ son.altered()
 
 
 # Expected output #
-# CHILD implicit()
-# OTHER override()
+# OTHER implicit()
+# CHILD override()
 # CHILD, BEFORE OTHER altered()
 # OTHER override()
 # CHILD, AFTER OTHER altered()
