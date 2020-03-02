@@ -113,7 +113,6 @@ class LaserWeaponArmory(Scene):
               """))
 
         code = f"{randint(1,9)}{randint(1,9)}{randint(1,9)}"
-        code = '123'
         guess = input("[keypad]> ")
         guesses = 0
 
