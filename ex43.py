@@ -5,8 +5,6 @@ from textwrap import dedent
 class Scene(object):
 
     def enter(self):
-        print("This scene is not not yet completed")
-        print("Subclass it and implement enter().")
         exit(1)
 
 class Engine(object):
@@ -225,7 +223,7 @@ class Finished(Scene):
 
 class Map(object):
 
-    scenes = {
+    scenes = {   ## create a dictionary of scenes
         'central_corridor': CentralCorridor(),
         'laser_weapon_armory': LaserWeaponArmory(),
         'the_bridge': TheBridge(),
@@ -245,6 +243,6 @@ class Map(object):
     def opening_scene(self):
         return self.next_scene(self.start_scene)
 
-a_map = Map('central_corridor')
-a_game = Engine(a_map)
+a_map = Map('central_corridor')    # create an instance of class Map
+a_game = Engine(a_map)             # create an instance of class Engine using object a_map
 a_game.play()
