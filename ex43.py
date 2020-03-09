@@ -13,12 +13,12 @@ class Engine(object):
         self.scene_map = scene_map
 
     def play(self):
-        current_scene = self.scene_map.opening_scene()
-        last_scene = self.scene_map.next_scene('finished')
+        current_scene = self.scene_map.opening_scene()                   # initialising/setting the current scene and calling opening_scene func
+        last_scene = self.scene_map.next_scene('finished')               # setting the last_scene and calling the last next_scene func
 
-        while current_scene != last_scene:
-            next_scene_name = current_scene.enter()
-            current_scene = self.scene_map.next_scene(next_scene_name)
+        while current_scene != last_scene:                               # Loop while current_scene not equal to last scene 'finished'
+            next_scene_name = current_scene.enter()                      # open current scene via enter func then assign to var 
+            current_scene = self.scene_map.next_scene(next_scene_name)   # concatenate self.scene_map with next_scene with next_scene name) and assign to current_scene var 
 
         current_scene.enter()
 
@@ -110,7 +110,8 @@ class LaserWeaponArmory(Scene):
               code is 3 digits.
               """))
 
-        code = f"{randint(1,9)}{randint(1,9)}{randint(1,9)}"
+        #code = f"{randint(1,9)}{randint(1,9)}{randint(1,9)}"
+        code = '123'
         guess = input("[keypad]> ")
         guesses = 0
 
@@ -191,7 +192,8 @@ class EscapePod(Scene):
               Theres 5 pods, which one do you take"
               """))
         
-        good_pod = randint(1,5)
+        #good_pod = randint(1,5)
+        good_pod = 1
         guess = input("[pod #]> ")
 
         if int(guess) != good_pod:
@@ -237,8 +239,8 @@ class Map(object):
         self.start_scene = start_scene
 
     def next_scene(self, scene_name):
-        val = Map.scenes.get(scene_name)
-        return val
+        val = Map.scenes.get(scene_name)       # get the scene name from scenes dictionary
+        return val                             # return the value of the scena name
 
     def opening_scene(self):
         return self.next_scene(self.start_scene)
