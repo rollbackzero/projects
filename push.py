@@ -1,6 +1,17 @@
 #!/usr/bin/env python
 
 def get_commands(x, y):
+    """
+    Get commands to configure a vlan.
+    
+    Args:
+        vlan (int): vlan id
+        name (str): name of the vlan
+
+    Returns:
+        List of commands is returned.
+    """
+    
     command = []       
     command.append('vlan ' + x)   
     command.append('name ' + y)
