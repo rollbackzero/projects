@@ -1,0 +1,11 @@
+{% for iface in interface_list %}
+interface {{ iface.name }}
+ description {{ iface.desc|upper }}
+ {%  if iface.uplink %}
+ switchport mode trunk
+ {%  else %}
+ switchport access vlan {{ iface.vlan }}
+ switchport mode access
+ {%  endif %}
+ Speed {{ iface.name|interface_speed }}
+{% endfor %}
